@@ -1,10 +1,7 @@
 <template>
   <div class="header">
     <div class="header-container">
-      <img
-        class="header-container-logo"
-        src="../assets/blibli-for-business.svg"
-      />
+      <img class="header-container-logo" src="../assets/logo-color.svg" />
       <div class="menus">
         <div class="menus-list" @mouseover="showDropdown = true">
           Manage Accounts
@@ -17,13 +14,10 @@
           @mouseover="showDropdown = true"
           @mouseout="showDropdown = false"
         >
-          <div
-            class="menus-values-options"
-            @click="navigateTo('DashboardView')"
-          >
+          <div class="menus-values-options" @click="navigateTo('/')">
             Dashboard
           </div>
-          <div class="menus-values-options" @click="navigateTo('expense list')">
+          <div class="menus-values-options" @click="navigateTo('/allExpenses')">
             Expense List
           </div>
           <div class="menus-values-options" @click="navigateTo('others')">
@@ -49,14 +43,12 @@
 
 <script>
 import { ref } from "vue";
+import router from "../router/index.js";
 export default {
   setup() {
     const showDropdown = ref(false);
     const navigateTo = (page) => {
-      console.log(page);
-      this.$router.push({
-        name: page,
-      });
+      router.push({ path: page });
     };
 
     return {
@@ -149,7 +141,7 @@ export default {
       font-family: Effra Medium;
       font-size: 12px;
       font-style: normal;
-      font-weight: 400;
+      font-weight: 800;
       line-height: 16px;
     }
     &-name {
@@ -157,7 +149,7 @@ export default {
       font-family: Effra;
       font-size: 10px;
       font-style: normal;
-      font-weight: 400;
+      font-weight: 600;
       line-height: 14px; /* 140% */
     }
   }

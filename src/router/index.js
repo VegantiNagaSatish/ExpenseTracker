@@ -1,6 +1,6 @@
 import { createRouter, createWebHistory } from "vue-router";
 import DashboardView from "../views/DashboardView.vue";
-import AboutView from "../views/AboutView.vue";
+import AllExpensesView from "../views/AllExpensesView.vue";
 
 const routes = [
   {
@@ -9,9 +9,9 @@ const routes = [
     component: DashboardView,
   },
   {
-    path: "/about",
-    name: "about",
-    component: AboutView,
+    path: "/allExpenses",
+    name: "AllExpenses",
+    component: AllExpensesView,
   },
 ];
 
